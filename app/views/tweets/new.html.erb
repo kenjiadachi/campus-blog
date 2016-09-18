@@ -1,0 +1,27 @@
+
+
+  <%= render 'header' %>
+
+  <%= form_for(@tweet) do |f| %>
+    <div id="article_wrap">
+      <div class="field">
+        <%= f.label :title, :"タイトル" %><br/>
+        <%= f.text_field :title %>
+      </div>
+
+      </br>
+      <div class="field">
+      <%= f.label :text, :"記事内容" %><br/>
+      <%= f.text_area :text %>
+      </div>
+      <div class="action">
+      <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+
+
+
+  <%= render 'footer' %>
+
+  <%= link_to 'Back', tweets_path %>

@@ -1,0 +1,6 @@
+Tweet.create(:title => '宇宙に行った日', :text => "gineogioeajgiargpiaejgieorgjoaerigja", :user_id => 1)
+Tweet.create(:title => '宇宙に行った日2', :text => "gineogioeajgiargpiaejgieoabhivbibvurgjoaerigja", :user_id => 1)
+Tweet.create(:title => '宇宙に行った日3', :text => "gineogioeajgiargpiaejgieorgjoaerr akbreoigja", :user_id => 1)
+Tweet.create(:title => '宇宙に行った日4', :text => "gineogioeajgiargpiaejgieorgvabiuraujoaerigja", :user_id => 1)
+Tweet.create(:title => '宇宙に行った日5', :text => "gineogioeajgiargpiaejgieorgjoae ajkrbfuiarigja", :user_id => 1)
+Tweet.create(:title => '宇宙に行った日6', :text => "gineogioeajgiargpiavnaioergnaiuejgieorgjoaerigja", :user_id => 1)

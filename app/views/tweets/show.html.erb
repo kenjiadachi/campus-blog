@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <%= render 'header' %>
+
+  <div id="title">
+      <div>
+          <p><%= @tweet.created_at.strftime("%Y/%m/%d") %> / 書いた人:<%= @tweet.user.email %></p>
+          <h1><%= @tweet.title %></h1>
+      </div>
+  </div>
+
+  <div id="article_wrap">
+    <div id="content">
+      <p><%= @tweet.text.html_safe %></p>
+    </div>
+    <%= render 'sidebar' %>
+    <div class="clear"></div>
+  </div>
+
+  <%= render 'footer' %>
+
+</body>
+</html>

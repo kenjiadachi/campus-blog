@@ -1,0 +1,9 @@
+<div id="sidebar">
+  <h2>★PV数ランキング</h2>
+  <ul>
+    <% @ranking_tweets.each do |tweet| %>
+    <% pv = REDIS.zscore "tweets/", "#{tweet.id}" %>
+    <li><%= link_to "#{tweet.title}", "/tweets/#{tweet.id}", method: :get %><span>(<%= pv.floor %>PV) </span></li>
+    <% end %>
+  </ul>
+</div>
