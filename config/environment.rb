@@ -5,4 +5,4 @@ require_relative 'application'
 Rails.application.initialize!
 
 # ENV["REDIS"] = "http://localhost:6379/"
-config.gem 'redis'
+# config.gem 'redis'
