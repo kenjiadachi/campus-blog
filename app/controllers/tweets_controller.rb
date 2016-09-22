@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   before_action :make_ranking, only: [:show, :index]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   # GET /tweets
   # GET /tweets.json
@@ -60,6 +61,7 @@ class TweetsController < ApplicationController
   # DELETE /tweets/1
   # DELETE /tweets/1.json
   def destroy
+    REDIS.zrem "tweets/", "#{@tweet.id}"
     @tweet.destroy
     respond_to do |format|
       format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
@@ -79,6 +81,7 @@ class TweetsController < ApplicationController
     end
 
     def make_ranking
+
       @@ids = REDIS.zrevrangebyscore "tweets/", "+inf", 0, limit: [0, 3]
     end
 end
